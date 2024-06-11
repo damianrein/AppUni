@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -19,6 +20,8 @@ public class Investigacion {
 	private Date finishDate;
 	private Integer state;
 	private String description;
+	@ManyToMany
+	private Investigador investigadores;
 	//private String [] keyWords
 //	@ForeignKey
 	@OneToMany
