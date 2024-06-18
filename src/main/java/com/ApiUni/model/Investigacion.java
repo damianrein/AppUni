@@ -1,14 +1,16 @@
 package com.ApiUni.model;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Investigacion {
@@ -21,10 +23,11 @@ public class Investigacion {
 	private Integer state;
 	private String description;
 	@ManyToMany
+	@JoinTable(name="investigacion_investigadores",joinColumns = @JoinColumn(name="investigacion_id", referencedColumnName = "id"),
+	inverseJoinColumns = @JoinColumn(name="investigador_id", referencedColumnName = "id"))
 	private Investigador investigadores;
-	//private String [] keyWords
-//	@ForeignKey
-	@OneToMany
+	private List<String> keyWords;
+	@ManyToOne
 	@JoinColumn(name = "id_laboratory", referencedColumnName = "id")
 	private Laboratorio laboratory;
 	
@@ -73,5 +76,13 @@ public class Investigacion {
 	public Long getId() {
 		return id;
 	}
-	
+	public List<String> getKeyWords() {
+		return keyWords;
+	}
+	public void setKeyWords(List<String> keyWords) {
+		this.keyWords = keyWords;
+	}
+	public void setKeyWords(String keyWords) {
+		this.keyWords.add(keyWords);
+	}
 }
