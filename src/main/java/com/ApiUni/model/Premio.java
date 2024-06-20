@@ -15,4 +15,20 @@ public class Premio {
 	private Long id;
 	private Date fecha;
 	private TipoDePremio tipo;
+	
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+	public TipoDePremio getTipo() {
+		return tipo;
+	}
+	public void setTipo(TipoDePremio tipo) {
+		this.tipo = tipo;
+	}
+	public Long getId() {
+		return id;
+	}
 }
