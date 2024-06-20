@@ -13,7 +13,7 @@ public class ApiUniApplication {
 }
 /*
 - Listar todas las investigaciones en curso.------------------------------------------------------>Lista
-- Listar los premios recibidos, durante el año 2023.
+- Listar los premios recibidos, durante el año 2023.---------------------------------------------->Lista
 - Los datos de los investigadores que pertenezcan a la facultad de ciencias sociales.
 - Que investigadores no han formado parte de ninguna investigación en los últimos 3 años.
 - Todos los investigadores categoría 1 ó 2 con título de doctor.
