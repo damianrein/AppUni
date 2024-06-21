@@ -17,4 +17,5 @@ public class Laboratorio {
 	@JoinColumn(name = "id_sede", referencedColumnName = "id")
 	private Sede sede;
 	private Denominacion denominacion;
+	private GrupoDeInvestigacion grupos;
 }
