@@ -20,7 +20,9 @@ public class Investigacion {
 	private Long id;
 	private Date starDate;
 	private Date finishDate;
-	private Integer state;
+	@ManyToOne
+	@JoinColumn(name="state", referencedColumnName = "id")
+	private EstadoInvestigacion state;
 	private String description;
 	@ManyToMany
 	@JoinTable(name="investigacion_investigadores",joinColumns = @JoinColumn(name="investigacion_id", referencedColumnName = "id"),
@@ -33,7 +35,7 @@ public class Investigacion {
 	
 	public Investigacion() {}
 	
-	public Investigacion(Long id, Date starDate, Date finishDate, Integer state, String description,
+	public Investigacion(Long id, Date starDate, Date finishDate, EstadoInvestigacion state, String description,
 			Laboratorio laboratory) {
 		this.id = id;
 		this.starDate = starDate;
@@ -55,10 +57,10 @@ public class Investigacion {
 	public void setFinishDate(Date finishDate) {
 		this.finishDate = finishDate;
 	}
-	public Integer getState() {
+	public EstadoInvestigacion getState() {
 		return state;
 	}
-	public void setState(Integer state) {
+	public void setState(EstadoInvestigacion state) {
 		this.state = state;
 	}
 	public String getDescription() {

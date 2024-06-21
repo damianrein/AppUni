@@ -17,6 +17,6 @@ public class ApiUniApplication {
 - Los datos de los investigadores que pertenezcan a la facultad de ciencias sociales.------------->
 - Que investigadores no han formado parte de ninguna investigación en los últimos 3 años.--------->
 - Todos los investigadores categoría 1 ó 2 con título de doctor.---------------------------------->
-- Las sedes que no posean grupo de investigación activo.------------------------------------------>
+- Las sedes que no posean grupo de investigación activo.------------------------------------------>Lista
 - Temas de investigación en los últimos 5 años.--------------------------------------------------->
 */

@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
@@ -25,7 +27,7 @@ public class Investigador {
 	private boolean activo;
 	@ManyToMany
 	private Investigacion investigaciones;
-	
+	@Max(value=5)@Min(value=1)
 	private byte categoria;
 	@OneToOne
 	@JoinColumn(name = "id_legajo", referencedColumnName = "id")

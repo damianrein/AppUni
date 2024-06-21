@@ -19,11 +19,13 @@ public class GrupoDeInvestigacion {
 	private Laboratorio laboratorio;
 	@OneToMany
 	private List<Investigador> investigadores;
+	private boolean activo;
 	
-	public GrupoDeInvestigacion(Long id, Laboratorio laboratorio, List<Investigador> investigadores) {
+	public GrupoDeInvestigacion(Long id, Laboratorio laboratorio, List<Investigador> investigadores, boolean activo) {
 		this.id = id;
 		this.laboratorio = laboratorio;
 		this.investigadores = investigadores;
+		this.setActivo(activo);
 	}
 
 	public Laboratorio getLaboratorio() {
@@ -43,5 +45,13 @@ public class GrupoDeInvestigacion {
 	}
 	public Long getId() {
 		return id;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 }

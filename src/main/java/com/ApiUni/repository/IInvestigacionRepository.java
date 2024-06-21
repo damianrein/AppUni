@@ -9,4 +9,6 @@ import com.ApiUni.model.Investigacion;
 public interface IInvestigacionRepository extends JpaRepository<Investigacion, Long>{
 	
 	List<Investigacion> findByState(Integer state);
+	
+	
 }
