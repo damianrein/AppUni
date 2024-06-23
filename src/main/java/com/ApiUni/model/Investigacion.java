@@ -1,6 +1,6 @@
 package com.ApiUni.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -18,11 +18,12 @@ public class Investigacion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Date starDate;
-	private Date finishDate;
+	private LocalDate starDate;
+	private LocalDate finish;
 	@ManyToOne
 	@JoinColumn(name="state", referencedColumnName = "id")
 	private EstadoInvestigacion state;
+	private String topic;
 	private String description;
 	@ManyToMany
 	@JoinTable(name="investigacion_investigadores",joinColumns = @JoinColumn(name="investigacion_id", referencedColumnName = "id"),
@@ -35,27 +36,28 @@ public class Investigacion {
 	
 	public Investigacion() {}
 	
-	public Investigacion(Long id, Date starDate, Date finishDate, EstadoInvestigacion state, String description,
+	public Investigacion(Long id, LocalDate starDate, LocalDate finish, EstadoInvestigacion state, String topic, String description,
 			Laboratorio laboratory) {
 		this.id = id;
 		this.starDate = starDate;
-		this.finishDate = finishDate;
+		this.finish = finish;
 		this.state = state;
+		this.topic = topic;
 		this.description = description;
 		this.laboratory = laboratory;
 	}
 	
-	public Date getStarDate() {
+	public LocalDate getStarDate() {
 		return starDate;
 	}
-	public void setStarDate(Date starDate) {
+	public void setStarDate(LocalDate starDate) {
 		this.starDate = starDate;
 	}
-	public Date getFinishDate() {
-		return finishDate;
+	public LocalDate getFinish() {
+		return finish;
 	}
-	public void setFinishDate(Date finishDate) {
-		this.finishDate = finishDate;
+	public void setFinish(LocalDate finish) {
+		this.finish = finish;
 	}
 	public EstadoInvestigacion getState() {
 		return state;
@@ -86,5 +88,13 @@ public class Investigacion {
 	}
 	public void setKeyWords(String keyWords) {
 		this.keyWords.add(keyWords);
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
 	}
 }

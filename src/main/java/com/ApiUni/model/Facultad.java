@@ -11,8 +11,15 @@ public class Facultad {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
-	String nombre;
+	private Long id;
+	private String nombre;
 	@OneToMany
 	private Sede sedes;
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 }

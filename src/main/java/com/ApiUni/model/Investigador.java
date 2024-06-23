@@ -27,7 +27,8 @@ public class Investigador {
 	private boolean activo;
 	@ManyToMany
 	private Investigacion investigaciones;
-	@Max(value=5)@Min(value=1)
+	@Max(value = 5)
+	@Min(value = 1)
 	private byte categoria;
 	@OneToOne
 	@JoinColumn(name = "id_legajo", referencedColumnName = "id")

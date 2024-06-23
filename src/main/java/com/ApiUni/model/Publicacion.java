@@ -1,6 +1,6 @@
 package com.ApiUni.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +18,7 @@ public class Publicacion {
 	@NotBlank
 	private String nombre;
 	@NotBlank
-	private Date fecha;
+	private LocalDate fecha;
 	@ManyToOne
 	private TipoDePublicacion tipo;
 	@NotBlank
@@ -26,7 +26,7 @@ public class Publicacion {
 	
 	public Publicacion() {}
 	
-	public Publicacion(Long id, @NotBlank String nombre, @NotBlank Date fecha, TipoDePublicacion tipo,
+	public Publicacion(Long id, @NotBlank String nombre, @NotBlank LocalDate fecha, TipoDePublicacion tipo,
 			@NotBlank String link) {
 		this.id = id;
 		this.nombre = nombre;
@@ -40,10 +40,10 @@ public class Publicacion {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 	public TipoDePublicacion getTipo() {
