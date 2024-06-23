@@ -1,5 +1,6 @@
 package com.ApiUni.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -14,5 +15,9 @@ public class InvestigacionService {
 	
 	public List<Investigacion> findByStateInvestigation(Integer state){
 		return repo.findByState(state);
+	}
+	
+	public List<String> findTopicOfTheLast(LocalDate date){
+		return repo.findInvestigacionTopicByFinishAfter(date);
 	}
 }
