@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -24,6 +25,9 @@ public class Investigador {
 	private String apellido;
 	private Date nacimiento;
 	private Date altaUniversidad;
+	@ManyToOne
+	@JoinColumn(name = "titulo_id", referencedColumnName = "id")
+	private Titulo titulo;
 	private boolean activo;
 	@ManyToMany
 	private Investigacion investigaciones;
@@ -36,17 +40,26 @@ public class Investigador {
 	
 	public Investigador() {}
 	
-	public Investigador(Long id, String nombre, String apellido, Date nacimiento, Date altaUniversidad, boolean activo,
-			Investigacion investigaciones, byte categoria, Legajo legajo) {
+	public Investigador(Long id, String nombre, String apellido, Date nacimiento, Date altaUniversidad, Titulo titulo,
+			boolean activo, Investigacion investigaciones, byte categoria, Legajo legajo) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.nacimiento = nacimiento;
 		this.altaUniversidad = altaUniversidad;
+		this.titulo = titulo;
 		this.activo = activo;
 		this.investigaciones = investigaciones;
 		this.categoria = categoria;
 		this.legajo = legajo;
+	}
+
+	public Titulo getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(Titulo titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getNombre() {
