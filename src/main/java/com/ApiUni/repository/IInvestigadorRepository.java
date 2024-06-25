@@ -13,4 +13,8 @@ public interface IInvestigadorRepository extends JpaRepository<Investigador, Lon
 	List<Investigador> findByInactivity();
 	
 	List<Investigador> findByFacultad();
+	
+	List<Investigador> findByTituloTituloIgnoreCase(String titulo);
+	
+	List<Investigador> findByTituloTituloEquals(String titulo);
 }

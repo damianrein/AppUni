@@ -16,7 +16,7 @@ public class Titulo {
 	private int id;
 	@NotBlank
 	private String titulo;
-	private String institucion;
+	//private String institucion;
 	private LocalDate fechaDeObtencion;
 	
 	public Titulo(int id, @NotBlank String titulo, LocalDate fechaDeObtencion) {
