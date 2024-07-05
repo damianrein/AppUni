@@ -13,7 +13,7 @@ import com.ApiUni.model.Investigacion;
 import com.ApiUni.service.InvestigacionService;
 
 @RestController
-@RequestMapping("/inv")
+@RequestMapping("/v1")
 public class InvestigacionController {
 
 	private InvestigacionService service;

@@ -12,7 +12,7 @@ import com.ApiUni.model.Investigador;
 import com.ApiUni.service.InvestigadorService;
 
 @RestController
-@RequestMapping("/investigadores")
+@RequestMapping("/v2")
 public class InvestigadorController {
 
 	private InvestigadorService service;

@@ -12,7 +12,7 @@ import com.ApiUni.model.Sede;
 import com.ApiUni.service.SedeService;
 
 @RestController
-@RequestMapping("/sedes")
+@RequestMapping("/v4")
 public class SedeController {
 
 	private SedeService service;

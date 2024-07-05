@@ -11,7 +11,7 @@ import com.ApiUni.model.Premio;
 import com.ApiUni.service.PremioService;
 
 @RestController
-@RequestMapping("/pr")
+@RequestMapping("/v3")
 public class PremioController {
 
 	private PremioService service;
