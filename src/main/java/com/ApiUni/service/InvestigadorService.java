@@ -23,4 +23,8 @@ public class InvestigadorService {
 	public List<Investigador> findByTituloIsEquals(String titulo){
 		return repo.findByTituloTituloEquals(titulo);
 	}
+	
+	public List<Investigador> findAlls(){
+		return repo.findAll();
+	}
 }

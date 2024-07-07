@@ -2,6 +2,7 @@ package com.ApiUni.controller;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,5 +30,11 @@ public class InvestigadorController {
 	@GetMapping("/ig/{titulo}")
 	public ResponseEntity<List<Investigador>> getByTitulo(@RequestParam String titulo){
 		return ResponseEntity.ok(service.findByTitulo(titulo));
+	}
+	
+	@GetMapping
+	@Cacheable("allInvestigador")
+	public ResponseEntity<List<Investigador>> getAll(){
+		return ResponseEntity.ok(service.findAlls());
 	}
 }
